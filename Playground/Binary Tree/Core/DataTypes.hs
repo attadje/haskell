@@ -13,5 +13,6 @@ instance Applicative BTree where
     Node f (L Empty) (R Empty) <*> Node x (L xs) (R xss) = Node (f x) (L (fmap f xs)) (R (fmap f xss))
     
 instance Monad BTree where
-    Node x (L _) (R _) >>= f = f x
+    return = pure
+    Node x (L xs) (R xss) >>= f = f x
     Empty >>= _ = Empty

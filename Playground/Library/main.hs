@@ -4,8 +4,6 @@ import Core.Data
 import Core.Logic
 
 
-
-
 main = do
     putStrLn "\nShow all the available books in the Manzarine library:\n"
     return manzarine >>= showBooksTitles 
